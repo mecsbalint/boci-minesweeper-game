@@ -1,0 +1,6 @@
+[submodule "backend-python"]
+	path = backend-python
+	url = https://github.com/mecsbalint/boci-minesweeper-game-backend-python.git
+[submodule "frontend-react"]
+	path = frontend-react
+	url = https://github.com/mecsbalint/boci-minesweeper-game-frontend-React.git
