@@ -1,0 +1,48 @@
+services:
+
+  db:
+    image: 'postgres:latest'
+    environment:
+      - POSTGRES_USER=compose-postgres
+      - POSTGRES_PASSWORD=compose-postgres
+      - POSTGRES_DB=bmg
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U compose-postgres -d bmg" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  
+
+  redis-cache:
+    image: 'redis:latest'
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+
+
+  backend:
+    build:
+      context: ./backend-python
+    depends_on:
+      db:
+        condition: service_healthy
+      redis-cache:
+        condition: service_healthy
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql://compose-postgres:compose-postgres@db:5432/bmg
+      - JWT_SECRET_KEY=sksksksksskskskssalakslaslasskalscvv
+      - CACHE_DEFAULT_TIMEOUT=300
+      - REDIS_URL=redis://redis-cache:6379/0
+
+
+  frontend:
+    build: 
+      context: ./frontend-react
+    depends_on:
+      - backend
+    ports:
+      - ${PORT_NUMBER}:80
