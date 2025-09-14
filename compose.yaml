@@ -34,7 +34,7 @@ services:
         condition: service_healthy
     environment:
       - SQLALCHEMY_DATABASE_URI=postgresql://compose-postgres:compose-postgres@db:5432/bmg
-      - JWT_SECRET_KEY=sksksksksskskskssalakslaslasskalscvv
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - CACHE_DEFAULT_TIMEOUT=300
       - REDIS_URL=redis://redis-cache:6379/0
 
