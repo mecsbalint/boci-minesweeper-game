@@ -7,13 +7,12 @@ services:
       - POSTGRES_PASSWORD=compose-postgres
       - POSTGRES_DB=bmg
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U compose-postgres -d bmg" ]
       interval: 5s
       timeout: 5s
       retries: 10
-  
 
   redis-cache:
     image: 'redis:latest'
@@ -22,7 +21,6 @@ services:
       interval: 1s
       timeout: 3s
       retries: 5
-
 
   backend:
     build:
@@ -37,7 +35,7 @@ services:
       - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - CACHE_DEFAULT_TIMEOUT=300
       - REDIS_URL=redis://redis-cache:6379/0
-
+      - FRONTEND_URI=http://localhost:${PORT_NUMBER}
 
   frontend:
     build: 
@@ -46,3 +44,6 @@ services:
       - backend
     ports:
       - ${PORT_NUMBER}:80
+
+volumes:
+  db-data:
