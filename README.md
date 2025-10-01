@@ -4,12 +4,13 @@
 
 ![BMG screenshot][screenshot01]
 
-The Boci's Minesweeper Game project is a full-stack web application where the users can play minesweeper. It currently supports single-player mode. The backend is powered by Flask, while the frontend is built with React, offering a modern and dynamic user experience. This project serves as the groundwork for a more ambitious multiplayer version, which will introduce real-time competitive and cooperative features in future iterations.
+The Boci's Minesweeper Game project is a full-stack web application where the users can play minesweeper. It currently supports single-player and two-player versus modes. The backend is powered by Flask, while the frontend is built with React, offering a modern and dynamic user experience. This project serves as the groundwork for a more ambitious multiplayer versions, which will introduce real-time competitive and cooperative features in future iterations.
 
 
 ### Core Features
 
 * **User Authentication:** The application includes user registration and login functionalities to personalize the experience.
+* **Single Player and Multiplayer Modes** The application has single player mode as well as a two-player versus mode
 * **Game State Caching** Redis-based game state caching for fast, efficient retrieval ad gameplay performance
 * **Responsove UI** The UI relies React's responsiveness and performance optimisation
 * **Dockerization:** The application is fully containerized using Docker.
@@ -28,6 +29,9 @@ The Boci's Minesweeper Game project is a full-stack web application where the us
 * [![Pytest][Pytest-ico]][Pytest-url]
 * [![Flask][Flask-ico]][Flask-url]
 * [![Redis][Redis-ico]][Redis-url]
+* [![Socketio][Socketio-ico]][Socketio-url]
+
+
 
 
 ## Getting Started
@@ -62,7 +66,7 @@ For run the project manually check the readmes of the [Frontend (React)](fronten
 - [x] User authentication
 - [x] Unit tests
 - [x] Dockerization
-- [ ] Multiplayer modes (competitive and cooperative)
+- [x] Multiplayer modes (competitive and cooperative)
 - [ ] Different maps
 - [ ] Desktop frontend built on PyQt
 - [ ] Integration tests
@@ -109,3 +113,6 @@ mecsbalint@gmail.com - https://github.com/mecsbalint
 
 [Redis-ico]: https://img.shields.io/badge/Redis-4A4A55?style=for-the-badge&logo=redis
 [Redis-url]: https://redis.io/
+
+[Socketio-ico]: https://img.shields.io/badge/Socketio-25c2a0?style=for-the-badge&logo=socket.io
+[Socketio-url]: https://socket.io/
