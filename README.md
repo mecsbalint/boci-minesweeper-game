@@ -15,6 +15,8 @@ The Boci's Minesweeper Game project is a full-stack web application where the us
 * **Responsove UI** The UI relies React's responsiveness and performance optimisation
 * **Dockerization:** The application is fully containerized using Docker.
 * **Backend Tests:** Unit tests cover the business logic of the Backend side of the application.
+* **Chat during multiplayer matches** The players can talk to each other during a match
+* **Scoreboard for multiplayer matches** The players can follow the score of the match
 
 
 ### Built with
@@ -82,7 +84,7 @@ mecsbalint@gmail.com - https://github.com/mecsbalint
 
 [Docker-Desktop]: https://www.docker.com/products/docker-desktop/
 
-[screenshot01]: readme_resources/bmg_screenshot_01.png
+[screenshot01]: readme_resources/bmg_screenshot_01.jpeg
 
 [Node-ico]: https://img.shields.io/badge/Node.js-35422E?style=for-the-badge&logo=node.js
 [Node-url]: https://nodejs.org/
