@@ -7,7 +7,7 @@ services:
       - POSTGRES_PASSWORD=compose-postgres
       - POSTGRES_DB=bmg
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U compose-postgres -d bmg" ]
       interval: 5s
