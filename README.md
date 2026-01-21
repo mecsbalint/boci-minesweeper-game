@@ -60,7 +60,7 @@ Or alternatively clone the repository: ```git clone https://github.com/mecsbalin
 
 ### Manual Setup (Without Docker)
 
-For run the project manually check the readmes of the [Frontend (React)](frontend-react/readme.md#set-up-manually) and [Backend (Flask)](backend-python/readme.md#set-up-manually) subprojects.
+For run the project manually check the readmes of the [Frontend (React)](https://github.com/mecsbalint/boci-minesweeper-game-frontend-React/blob/main/README.md) and [Backend (Flask)](https://github.com/mecsbalint/boci-minesweeper-game-backend-python/blob/main/README.md) subprojects.
 
 ## Roadmap
 
